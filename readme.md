@@ -16,5 +16,9 @@ The entities are persisted in an H2 in-memory database. The project comes with a
 #### Notes
 
 This is a quick and dirty self tutorial with no testing included at all. Also GraphiQl is not included, so if you want to
-test GraphQL queries, mutations or subscriptions with other than the React client app you have to use an external GraphQl tool like the native [GraphiQL app](https://www.electronjs.org/apps/graphiql).  
+test GraphQL queries, mutations or subscriptions with other than the React client app you have to use an external GraphQl tool like the native [GraphiQL app](https://www.electronjs.org/apps/graphiql).
+
+#### Docker
+
+You can pull an image of this project from the [docker registry](https://hub.docker.com/repository/docker/apo67/voteapp-server-graphql)  
 
