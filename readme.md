@@ -7,8 +7,11 @@ The original Node.js based server and the React app that is using it can be foun
 
 #### Configuration
 
-The spring boot app runs at port 4000 and serves the pathes as configured in the React app's Apollo client config.
-The entities are persisted in an H2 in-memory database.
+Per default the spring boot app runs at port 4000 and serves the pathes as configured in the React app's Apollo client config - see [application.properties](./src/main/resources/application.properties) 
+
+The entities are persisted in an H2 in-memory database. The project comes with a built in H2-console mapped to "/h2console".
+
+**Please note** that per default the GraphQL servlet is mapped to the root "/" and thus will handle any request, therefore the H2-console is not accessible unless you change the GraphQL mapping to e.g. "/graphql".  
 
 #### Notes
 
