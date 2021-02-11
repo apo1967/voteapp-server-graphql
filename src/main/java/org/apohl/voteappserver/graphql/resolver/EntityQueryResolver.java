@@ -3,6 +3,7 @@ package org.apohl.voteappserver.graphql.resolver;
 import graphql.kickstart.tools.GraphQLQueryResolver;
 import org.apohl.voteappserver.domain.Vote;
 import org.apohl.voteappserver.domain.VoteRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
@@ -25,7 +26,7 @@ public class EntityQueryResolver implements GraphQLQueryResolver {
 
     private VoteRepository voteRepository;
 
-    public EntityQueryResolver(VoteRepository voteRepository) {
+    public EntityQueryResolver(@Autowired VoteRepository voteRepository) {
         this.voteRepository = voteRepository;
     }
 

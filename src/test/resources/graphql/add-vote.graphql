@@ -1,0 +1,12 @@
+mutation {
+    addVote(
+        newVote: {
+            title: "the title",
+            description: "the description",
+            choices: ["yes", "no"]
+        })
+    {
+        id,
+        title
+    }
+}

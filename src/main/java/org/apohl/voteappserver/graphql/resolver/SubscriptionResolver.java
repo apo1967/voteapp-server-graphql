@@ -4,6 +4,7 @@ import graphql.kickstart.tools.GraphQLSubscriptionResolver;
 import org.apohl.voteappserver.domain.Vote;
 import org.apohl.voteappserver.graphql.publisher.PublisherService;
 import org.reactivestreams.Publisher;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -19,7 +20,7 @@ public class SubscriptionResolver implements GraphQLSubscriptionResolver {
 
     private PublisherService publisherService;
 
-    public SubscriptionResolver(PublisherService publisherService) {
+    public SubscriptionResolver(@Autowired PublisherService publisherService) {
         this.publisherService = publisherService;
     }
 

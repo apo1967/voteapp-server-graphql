@@ -6,6 +6,7 @@ import org.apohl.voteappserver.domain.ChoiceRepository;
 import org.apohl.voteappserver.domain.Vote;
 import org.apohl.voteappserver.domain.VoteRepository;
 import org.apohl.voteappserver.graphql.publisher.PublisherService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
@@ -30,14 +31,15 @@ public class EntityMutationResolver implements GraphQLMutationResolver {
 
     private PublisherService publisherService;
 
-    public EntityMutationResolver(VoteRepository voteRepository, ChoiceRepository choiceRepository, PublisherService publisherService) {
+    public EntityMutationResolver(@Autowired VoteRepository voteRepository, @Autowired ChoiceRepository choiceRepository,
+                                  @Autowired PublisherService publisherService) {
         this.voteRepository = voteRepository;
         this.choiceRepository = choiceRepository;
         this.publisherService = publisherService;
     }
 
     /**
-     * @param newVote the input object from the GraphQL mutation that the {@link Vote} and it's º{@link Choice}s are
+     * @param newVote the input object from the GraphQL mutation that the {@link Vote} and it's {@link Choice}s are
      *                created from
      * @return the saved {@link Vote}
      */
